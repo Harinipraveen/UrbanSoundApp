@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+<h1><i>SoundFinder</i></h1>
+<p><font color="0000FF"><i><b>Making your neighbourhood safe and sound...!</b></i></font></p>
+<h2 >What did I hear??</h2>
+<h4>Select file to upload and click to predict</h4>
+<style>
+body {
+        background-image: url(" https://thumbs.dreamstime.com/z/urban-sounds-21932235.jpg");
+} 
+ 
+</style>
+</head>
+<p >
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes >
+		{% for message in messages %}
+		  <li >{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="POST" action="{{ url_for('upload') }}"  enctype="multipart/form-data">
+    <dl>
+		<p >
+			<input type="file" name="file" multiple="true" required>
+		</p>
+    </dl>
+    <p >
+		<input type="submit" value="Predict">
+	</p>
+</form>

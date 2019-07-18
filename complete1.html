@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+<h1><i>SoundFinder</i></h1>
+<p><font color="0000FF"><i><b>Making your neighbourhood safe and sound...!</b></i></font></p>
+<h2>Voila!  You heard....</h2>
+<style>
+body {
+        background-image: url(" https://thumbs.dreamstime.com/z/urban-sounds-21932235.jpg");
+} 
+</style>
+ <nav>        
+          <ul  style="list-style-type: square">
+              <h3>Sound: {{Result}}</h3>
+               <h3>Message: {{Level}}</h3>
+          </ul>
+        </nav>
+</head>
+<form method="GET" action="{{  url_for("index" )  }}" >
+    <p>
+		<input type="submit" value="Try another sound">
+	</p>
+</form>
